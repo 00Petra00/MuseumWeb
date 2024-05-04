@@ -1,0 +1,45 @@
+<span class="loading-indicator" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</span>
+<div class="main_component div-flex">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>My Tickets</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+  <table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let exhibiton of exhibitions; let i = index;">
+    <td>{{exhibiton.title}}</td>
+    <td>{{exhibiton.date | dateFormat}}</td>
+    <td><button mat-raised-button color="primary" type="button" (click)="delete(exhibiton.id)">Delete</button></td>
+    </tr>
+  </table>
+  <span class="buttons">
+    <button mat-raised-button color="primary" type="button" (click)="goBack()">Back</button>
+  </span>
+</mat-card-content>
+</mat-card>
+</div>
+
+<!-- <div class="main_component">
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let exhibition">{{ exhibition.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let exhibition">{{ exhibition.description }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['title', 'description']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['title', 'description'];"></tr>
+  </table>
+</div> -->

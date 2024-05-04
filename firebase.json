@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "museum",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "museum-web-587ed": {
+      "hosting": {
+        "museum": [
+          "museum-web-587ed"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "museum-web-587ed"
+  }
+}

@@ -1,0 +1,34 @@
+<span class="loading-indicator" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</span>
+<div class="main_component div-flex">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="exhibition">
+        <h3>{{ exhibition.title }}</h3>
+        <img [src]="!loading ? exhibition.image_url : ''"  alt="Image" class="image">
+        <p [ngClass]="{'red-text': isDateOlder(exhibition.date)}">{{ exhibition.date| dateFormat }}</p>
+        <div class="box">
+          <h4>Description: </h4>
+          <p>{{ exhibition.description }}</p>
+        </div>
+        <p>Ticket: {{ exhibition.price | number:'1.2-2' }}HUF</p>
+        <span class="buttons">
+        <button mat-raised-button color="primary" (click)="updateExhibition()">Update</button>
+        </span><span class="buttons">
+        <button mat-raised-button color="primary" (click)="delete(exhibition.id )">Remove</button>
+        </span>
+      </div>
+      <span class="buttons">
+        <button mat-raised-button color="primary" type="button" (click)="buy()" [ngStyle]="{'background-color': isDateOlder(exhibition.date) ? 'gray' : ''}" [disabled]="isDateOlder(exhibition.date)">Buy a ticket</button>
+      </span>
+      <span class="buttons">
+      <button mat-raised-button color="primary" type="button" (click)="goBack()">Back</button>
+      </span>
+
+    </mat-card-content>
+  </mat-card>
+</div>

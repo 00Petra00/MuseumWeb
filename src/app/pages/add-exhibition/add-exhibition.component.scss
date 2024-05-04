@@ -1,0 +1,50 @@
+.div_flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.main_component{
+  height: 100vh;
+}
+
+form div{
+  padding: 5px;
+}
+
+form{
+  display: inline-grid;
+  width: 50%;
+  align-self: center;
+}
+
+.subForm{
+  width: 100%;
+  display: inline-grid;
+}
+
+.buttons{
+  padding: 5px;
+}
+
+@media only screen and (max-width: 460px) {
+  .buttons{
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+button{
+  width: 100px;
+}
+
+.upload-button{
+  background-color: rgb(35, 3, 64) !important;
+  color: white !important;
+}
+
+#textarea{
+  height: 200px;
+  resize: none;
+}

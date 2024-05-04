@@ -1,0 +1,41 @@
+<span class="loading-indicator" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</span>
+<div class="main_component">
+  <div class="div_flex">
+    <h1>Edit an exhibition!</h1>
+    <form [formGroup]="editExhibitionForm" (ngSubmit)="update(selectedExhibition)">
+      <mat-form-field>
+        <mat-label for="title">Title: </mat-label>
+        <input matInput type="text" formControlName="title" [value]=" selectedExhibition?.title " />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="description">Description: </mat-label>
+        <textarea id="textarea" matInput formControlName="description" [value]="selectedExhibition?.description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="date">Date: </mat-label>
+        <input matInput type="date" formControlName="date" [value]="formattedDate" />
+
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="price">Price: </mat-label>
+        <input matInput type="number" formControlName="price" [value]="selectedExhibition?.price" />
+      </mat-form-field>
+
+      <div>
+        <span class="buttons">
+          <button type="button" class="upload-button" mat-raised-button (click)="fileInput.click()" accept="image/*">Choose Image</button></span>
+          <input hidden  #fileInput type="file" (change)="onFileSelected($event)" id="file">
+
+      </div>
+      <div>
+        <span class="buttons">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        </span><span class="buttons">
+        <button mat-raised-button color="primary" type="button" (click)="goBack()">Back</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

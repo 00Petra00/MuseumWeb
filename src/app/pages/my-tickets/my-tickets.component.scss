@@ -1,0 +1,26 @@
+.main_component{
+  height: 100vh;
+}
+
+.div-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+mat-card {
+  width: 80%;
+  height: auto;
+  display: inline-block;
+  align-self: center;
+}
+
+mat-card-header {
+  display: initial;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 10px;
+}

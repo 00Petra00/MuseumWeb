@@ -1,0 +1,16 @@
+<span class="loading-indicator" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</span>
+
+<div class="main_component">
+
+  <div class="image-grid">
+    <div class="image-item" *ngFor="let exhibition of exhibitions">
+      <img [src]="exhibition.image_url" alt="Image" class="grid-image" (click)="showDetails(exhibition.id)">
+      <p>{{ exhibition.title }}: {{ exhibition.date | dateFormat }} </p>
+    </div>
+  </div>
+  <span class="buttons">
+  <button mat-raised-button color="primary" (click)="addExhibition()">Add new exh.</button>
+  </span>
+</div>
